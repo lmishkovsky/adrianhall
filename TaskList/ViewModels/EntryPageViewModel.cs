@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Threading.Tasks;
 using TaskList.Abstractions;
+using TaskList.Helpers;
 using Xamarin.Forms;
 
 namespace TaskList.ViewModels
@@ -28,6 +29,9 @@ namespace TaskList.ViewModels
 
 			try
 			{
+				var cloudService = ServiceLocator.Instance.Resolve<ICloudService>();
+				await cloudService.LoginAsync();
+
                 Application.Current.MainPage = new NavigationPage(new Views.TaskList());
 			}
 			catch (Exception ex)

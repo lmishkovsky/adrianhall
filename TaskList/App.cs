@@ -1,4 +1,5 @@
 ﻿using TaskList.Abstractions;
+using TaskList.Helpers;
 using TaskList.Services;
 using Xamarin.Forms;
 
@@ -10,7 +11,10 @@ namespace TaskList
 
 		public App()
 		{
-			CloudService = new AzureCloudService();
+			//CloudService = new AzureCloudService();
+
+            ServiceLocator.Instance.Add<ICloudService, AzureCloudService>();
+
             MainPage = new NavigationPage(new Views.EntryPage());
 		}
 
