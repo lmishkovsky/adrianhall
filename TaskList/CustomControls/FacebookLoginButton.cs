@@ -1,10 +1,12 @@
 ﻿using System;
+
 namespace TaskList.CustomControls
 {
-    public class FacebookLoginButton
+    /// <summary>
+    /// Facebook login button.
+    /// </summary>
+    public class FacebookLoginButton : Xamarin.Forms.View
     {
-        public FacebookLoginButton()
-        {
-        }
+        
     }
 }

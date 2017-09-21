@@ -2,16 +2,20 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="TaskList.Views.EntryPage"
+    xmlns:controls="clr-namespace:TaskList.CustomControls;assembly:TaskList"
     Title="{Binding Title}">
 	<ContentPage.Content>
         <StackLayout HorizontalOptions="Center"
                      Orientation="Vertical"
                      VerticalOptions="Center">
-            <Button BackgroundColor="Teal"
+            <Button BackgroundColor="Blue"
                     BorderRadius="10"
                     Command="{Binding LoginCommand}"
-                    Text="Login"
+                    Text="Login with Facebook"
                     TextColor="White" />
+
+            <controls:FacebookLoginButton />
         </StackLayout>
+        
 	</ContentPage.Content>
 </ContentPage>
